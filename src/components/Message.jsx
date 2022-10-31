@@ -1,4 +1,6 @@
 import React from "react";
+import { auth } from "../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const style = {
   message: `flex items-center shadow-xl m-7 py-2 px-6 rounded-tl-full rounded-tr-full`,
@@ -8,9 +10,11 @@ const style = {
 };
 
 const Message = ({ message }) => {
+  const [user] = useAuthState(auth);
+
   return (
     <div className={style.message}>
-      <p className={style.name}>Dive</p>
+      <p className={style.name}>{user.displayName}</p>
       <p>{message.text}</p>
     </div>
   );
