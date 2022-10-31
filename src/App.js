@@ -18,7 +18,7 @@ function App() {
         {/* Navbar */}
         <Navbar />
         {/* Chat bar */}
-        <Chat />
+        {user ? <Chat /> : null}
       </section>
     </div>
   );

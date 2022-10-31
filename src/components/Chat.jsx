@@ -5,7 +5,7 @@ import { db } from "../firebase";
 import SendMessage from "./SendMessage";
 
 const style = {
-  main: ``,
+  main: `flex flex-col p-[10px]`,
 };
 
 const Chat = () => {
@@ -34,7 +34,7 @@ const Chat = () => {
           ))}
       </main>
       {/* Send message component */}
-      <SendMessage />
+      <SendMessage scroll={scroll} />
       <span ref={scroll}></span>
     </>
   );
